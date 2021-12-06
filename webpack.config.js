@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js' // bundle vai aqui
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.scss'], // extensões paras as quais estamos dando suporte
+    extensions: ['.ts', '.tsx', '.js', 'scss'], // extensões paras as quais estamos dando suporte
     alias: {
       '@': path.join(__dirname, 'src') // mapeamento conforme usado no ts para importar com @
     }
@@ -19,7 +19,7 @@ module.exports = {
     rules: [{ // define quais os loaders serão usados para cada arquivo
       test: /\.ts(x?)$/,
       loader: 'ts-loader',
-      exclude: /node_module/
+      exclude: /node_modules/
     }, {
       test: /\.scss$/,
       use: [{
@@ -29,8 +29,10 @@ module.exports = {
         options: { // permite acessar as propriedades de um arquivo scss no react dentro do tsx ex: Styles.myClass
           modules: true
         }
+      }, {
+        loader: 'sass-loader'
       }],
-      exclude: /node_module/
+      exclude: /node_modules/
     }]
   },
   devServer: {
