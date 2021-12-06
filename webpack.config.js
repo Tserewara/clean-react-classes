@@ -26,7 +26,7 @@ module.exports = {
         loader: 'style-loader'
       }, {
         loader: 'css-loader',
-        option: { // permite acessar as propriedades de um arquivo scss no react dentro do tsx ex: Styles.myClass
+        options: { // permite acessar as propriedades de um arquivo scss no react dentro do tsx ex: Styles.myClass
           modules: true
         }
       }],
